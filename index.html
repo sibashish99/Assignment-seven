@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script/jquery-3.6.0.js"></script>
+
+    <script>
+        $(document).ready(function(){
+          $("#b1").click(function(){
+            var nm= $("#txtname").val();
+            var gen = $(":radio[name='typee']:checked").val();
+            var siz= $("#size").val();
+            var oth= $("#other").val();
+            var to= $("#top").val();
+            var qu= $("#txtquan").val();
+
+            $("#tbl").append("<tr><td>"+nm+"</td><td>"+gen+"</td><td>"+siz+"</td><td>"+oth+"</td><td>"+to+"</td><td>"+qu+"</td></tr>");
+          });
+        });
+    </script>
+
+</head>
+<body>
+    <h2>Pizza order System</h2>
+    <form>
+        <table border="1">
+            <tr>
+                <td>Enter Pizza Name</td>
+                <td><input type="text" id="txtname"></td>
+            </tr>
+
+            
+            <tr>
+                <td>Select Type </td>
+                <td>
+                    <input type="radio" id="t" name="typee" value="veg">Veg
+                    <input type="radio" id="t" name="typee" value="non-veg">Non Veg
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td>Select Size</td>
+                <td>
+                    <select id="size" >
+                        <option value="small">S</option>
+                        <option value="medium">M</option>
+                        <option value="large">L</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Select Other</td>
+                <td>
+                    <select id="other" multiple>
+                        <option value="coke">Coke</option>
+                        <option value="Finger chips">Finger chips</option>
+                        <option value="Lava cake">Lava cake</option>
+                       
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Select Toppings</td>
+                <td>
+                    <select id="top" multiple>
+                        <option value="Pepperoni">Pepperoni.</option>
+                        <option value="Extra chees">Extra cheese.</option>
+                        <option value="Black olives">Black olives</option>
+                       
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter Quantity</td>
+                <td><input type="number" id="txtquan"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Place order" id="b1"></td>
+            </tr>
+        </table>
+        <table border="1" id="tbl"></table>
+    </form>
+</body>
+</html>
